@@ -1,0 +1,68 @@
+.center-me {
+  text-align: center;
+}
+
+nav {
+  padding: 1rem;
+  padding-top: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--background-primary);
+  z-index: 10;
+  transition: flex-direction 10s ease-in-out; 
+}
+
+.date-picker-container {
+  
+  display: block;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: fit-content; /* Adjust as needed */
+  margin: 0 auto;
+  margin-bottom: 0rem;
+}
+input[type=date] {
+  text-align: center;
+}
+
+
+nav h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.nav-card {
+  width: 10rem;
+  margin: .2rem 0;
+}
+
+.nav-card p {
+  margin: 0 auto;
+  font-size: 1rem;
+}
+
+@media (min-width: 640px) { 
+  header {
+    display: none;
+  }
+
+  nav {
+    display: flex;
+    position: sticky;
+    width: fit-content;
+    min-width: 200px;
+  }
+}
+
+@media (max-width: 639px) {
+  nav {
+    flex-direction: column;
+  }
+}
