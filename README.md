@@ -1,7 +1,7 @@
 # React - NASA API (APOD)
 
 A React API project.
-This project uses Astronomy Picutre of the Day (APOD) API by NASSA.
+This project uses Astronomy Picture of the Day (APOD) API by NASSA.
 
 It's a web app that retrieves data via API.
 
