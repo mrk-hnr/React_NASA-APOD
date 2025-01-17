@@ -15,13 +15,13 @@ export default function BottomNav() {
       />
             </div>
 
-
+ 
             <div>
             {APODWeek.map((celesObj, celesIndex) => {
                 return (
                     <button
                         key={celesIndex}
-                        className={"nav-card "}>
+                        className={`nav-card `}>
                         <p>
                             {celesObj}
                         </p>

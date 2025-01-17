@@ -19,7 +19,6 @@ nav {
 }
 
 .date-picker-container {
-  
   display: block;
   justify-content: center;
   align-items: center;
@@ -28,6 +27,7 @@ nav {
   margin: 0 auto;
   margin-bottom: 0rem;
 }
+
 input[type=date] {
   text-align: center;
 }
@@ -49,9 +49,9 @@ nav h1 {
 }
 
 @media (min-width: 640px) { 
-  header {
+  /* header {
     display: none;
-  }
+  } */
 
   nav {
     display: flex;
@@ -59,6 +59,10 @@ nav h1 {
     width: fit-content;
     min-width: 200px;
   }
+}
+
+.astroCard-container {
+  margin-top: 5rem;
 }
 
 @media (max-width: 639px) {
