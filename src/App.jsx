@@ -12,16 +12,15 @@ function App() {
   const [dates, setDates] = useState([])
 
   // Get the last 7 dates from current date
-  
   const getLast7Days = () => {
     const dates = [];
     for (let i = 0; i < 7; i++) {
       const date = new Date();
       date.setDate(date.getDate() - i);
-      const formattedDate = `${('0' + (date.getMonth() + 1)).slice(-2)}-${('0' + date.getDate()).slice(-2)}-${date.getFullYear()}`;
-      dates.push(formattedDate);
+      dates.push(date.toISOString().split('T')[0]); // Format the date as YYYY-MM-DD
     }
-    return dates;
+    return dates
+    console.log(dates[0])
   };
 
   useEffect(() => {
@@ -29,13 +28,14 @@ function App() {
   }, [])
 
 
-
   return (
     <>
-      <Header />
+      <Header dates={dates} />
 
 
       <AstroCard dates={dates} />
+
+
       <BottomNav
         dates={dates}
         setDates={setDates} />

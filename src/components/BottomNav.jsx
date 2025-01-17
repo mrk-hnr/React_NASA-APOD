@@ -1,6 +1,8 @@
 import { APODWeek } from "../utility"
 
-export default function BottomNav() {
+export default function BottomNav(props) {
+    const {dates} = props
+
     return (
         <nav>
             <div className={"header"}>
@@ -17,16 +19,16 @@ export default function BottomNav() {
 
  
             <div>
-            {APODWeek.map((celesObj, celesIndex) => {
+            {dates.map((datesObj, datesIndex) => {
                 return (
+                    
                     <button
-                        key={celesIndex}
+                        key={datesIndex}
                         className={`nav-card `}>
                         <p>
-                            {celesObj}
+                            {datesObj}
                         </p>
                     </button>
-
                 )
 
             })}
