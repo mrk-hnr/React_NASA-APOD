@@ -54,9 +54,16 @@ export default function AstroCard(props) {
         <div>
             {data && (
                 <div>
-                    <h3>{data.title}</h3>
-                    <p>{data.explanation}</p>
-                    <img src={data.url} alt={data.title} />
+                    <div className="astroCard__title-date">
+                        <h2>{data.title} - </h2>
+                        <h3> {data.date}</h3>
+                    </div>
+                    
+                    {/* <p>{data.explanation}</p> */}
+                    <img 
+                        className="astroCard__thumbnail"
+                        src={data.url}
+                        alt={data.title} />
                 </div>
             )}
         </div>

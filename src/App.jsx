@@ -32,9 +32,7 @@ function App() {
     <>
       <Header dates={dates} />
 
-
       <AstroCard dates={dates} />
-
 
       <BottomNav
         dates={dates}
