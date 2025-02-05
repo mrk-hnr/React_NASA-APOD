@@ -11,21 +11,24 @@ import BottomNav from "./components/BottomNav"
 function App() {
 
   const [dates, setDates] = useState([])
+  const [selectedDate, setSelectedDate] = useState(null);
 
   useEffect(() => {
     setDates(getLast7Days())
   }, [])
 
 
+
+
+
+
   return (
     <>
       <Header dates={dates} />
 
-      <AstroCard dates={dates} />
+      <AstroCard dates={dates} selectedDate={selectedDate} />
 
-      <BottomNav
-        dates={dates}
-        setDates={setDates} />
+      <BottomNav dates={dates} setSelectedDate={setSelectedDate} />
 
     </>
   )

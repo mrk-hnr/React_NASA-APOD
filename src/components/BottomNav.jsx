@@ -1,40 +1,28 @@
+import React from 'react';
 
+export default function BottomNav({ dates, setSelectedDate }) {
+  return (
+    <nav>
+      <div className="date-picker-container">
+        <input
+          type="date"
+          className="center-me"
+          placeholder="Select Date"
+        />
+      </div>
 
-export default function BottomNav(props) {
-    const {dates} = props
-
-    return (
-        <nav>
-            <div className={"header"}>
-                {/* <h1 className="text-gradient">APOD</h1> */}
-            </div>
-
-            <div className="date-picker-container">
-                <input
-                    type="date"
-                    className="center-me"
-                    placeholder="Select Date"
-      />
-            </div>
-
- 
-            <div>
-            {dates.map((datesObj, datesIndex) => {
-                return (
-                    
-
-                    // Button that shows the last 7 days
-                    <button
-                        key={datesIndex}
-                        className={`nav-card `}>
-                        <p>
-                            {datesObj}
-                        </p>
-                    </button>
-                )
-
-            })}
-            </div>
-        </nav>
-    )
+      <div>
+        {dates.map((date, index) => (
+          <button
+            key={index}
+            className="nav-card"
+            onClick={() => setSelectedDate(date)} // Allows me to pass the date data to parent and then to sibling component. This will allow me to select each date button and it will display the data for THAT date.
+          >
+            <p>{date}</p>
+            
+          </button>
+        ))}
+      </div>
+    </nav>
+  );
 }

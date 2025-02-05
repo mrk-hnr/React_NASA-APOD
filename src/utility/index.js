@@ -11,7 +11,7 @@ export const APODWeek = [
 
   export const getLast7Days = () => {
     const dates = [];
-    for (let i = 1; i < 7; i++) { // Since Asia is ahead in terms of time, For loop starts at one to use prev day as current date to prevent error for residence ahead of US. 
+    for (let i = 1; i < 8; i++) { // Since Asia is ahead in terms of time, For loop starts at one to use prev day as current date to prevent error for residence ahead of US. 
         const date = new Date();
         date.setDate(date.getDate() - i);
         const year = date.getFullYear();
