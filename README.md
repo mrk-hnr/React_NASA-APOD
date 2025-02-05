@@ -23,6 +23,8 @@ It's a web app that retrieves data via API.
 - Selecting any date in input box will retrieve data from selected date and display the info
 - Pass data from child A component → parent compoent → child B component
 
+**Optimization**
+- Change styling for better visual and readability
 
 <hr>
 
