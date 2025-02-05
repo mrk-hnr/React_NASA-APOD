@@ -59,7 +59,7 @@ export default function AstroCard(props) {
                         <h3> {data.date}</h3>
                     </div>
                     
-                    {/* <p>{data.explanation}</p> */}
+                    <p>{data.explanation}</p>
                     <img 
                         className="astroCard__thumbnail"
                         src={data.url}

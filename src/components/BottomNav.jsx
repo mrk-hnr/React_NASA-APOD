@@ -1,4 +1,4 @@
-import { APODWeek } from "../utility"
+
 
 export default function BottomNav(props) {
     const {dates} = props
@@ -9,10 +9,10 @@ export default function BottomNav(props) {
                 {/* <h1 className="text-gradient">APOD</h1> */}
             </div>
 
-            <div class="date-picker-container">
+            <div className="date-picker-container">
                 <input
                     type="date"
-                    class="center-me"
+                    className="center-me"
                     placeholder="Select Date"
       />
             </div>
@@ -22,6 +22,8 @@ export default function BottomNav(props) {
             {dates.map((datesObj, datesIndex) => {
                 return (
                     
+
+                    // Button that shows the last 7 days
                     <button
                         key={datesIndex}
                         className={`nav-card `}>
