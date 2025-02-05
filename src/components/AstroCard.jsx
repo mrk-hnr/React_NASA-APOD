@@ -6,15 +6,16 @@ export default function AstroCard({ dates, selectedDate }) {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    if (loading || !localStorage || !selectedDate) { return; }
+    const fetchDate = selectedDate || dates[0];
+    if (loading || !localStorage || !fetchDate) { return; }
 
     let cache = {};
     if (localStorage.getItem("APOD")) {
       cache = JSON.parse(localStorage.getItem("APOD"));
     }
 
-    if (cache[selectedDate]) {
-      setData(cache[selectedDate]);
+    if (cache[fetchDate]) {
+      setData(cache[fetchDate]);
       return;
     }
 
@@ -23,7 +24,7 @@ export default function AstroCard({ dates, selectedDate }) {
       setError(null);
 
       try {
-        const url = `https://api.nasa.gov/planetary/apod?date=${selectedDate}&api_key=hETQq0FPsZJnUP9C3sUEFtwmJH3edb4I5bghfWDM`;
+        const url = `https://api.nasa.gov/planetary/apod?date=${fetchDate}&api_key=hETQq0FPsZJnUP9C3sUEFtwmJH3edb4I5bghfWDM`;
         const res = await fetch(url);
 
         if (!res.ok) {
@@ -33,7 +34,7 @@ export default function AstroCard({ dates, selectedDate }) {
         const APODData = await res.json();
         setData(APODData);
 
-        cache[selectedDate] = APODData;
+        cache[fetchDate] = APODData;
         localStorage.setItem("APOD", JSON.stringify(cache));
       } catch (error) {
         console.error("Failed to fetch APOD data:", error);
@@ -44,7 +45,7 @@ export default function AstroCard({ dates, selectedDate }) {
     }
 
     fetchAPODData();
-  }, [selectedDate, loading]);
+  }, [selectedDate, dates, loading]);
 
   return (
     <div>

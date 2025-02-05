@@ -1,6 +1,10 @@
 import React from 'react';
 
 export default function BottomNav({ dates, setSelectedDate }) {
+  const handleDateChange = (event) => {
+    setSelectedDate(event.target.value);
+  };
+
   return (
     <nav>
       <div className="date-picker-container">
@@ -8,6 +12,7 @@ export default function BottomNav({ dates, setSelectedDate }) {
           type="date"
           className="center-me"
           placeholder="Select Date"
+          onChange={handleDateChange}
         />
       </div>
 
@@ -16,10 +21,9 @@ export default function BottomNav({ dates, setSelectedDate }) {
           <button
             key={index}
             className="nav-card"
-            onClick={() => setSelectedDate(date)} // Allows me to pass the date data to parent and then to sibling component. This will allow me to select each date button and it will display the data for THAT date.
+            onClick={() => setSelectedDate(date)}
           >
             <p>{date}</p>
-            
           </button>
         ))}
       </div>
