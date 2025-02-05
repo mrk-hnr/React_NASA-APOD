@@ -21,7 +21,7 @@ It's a web app that retrieves data via API.
 - Retrieves current day's APOD data and display all info by default
 - Selecting one of the last 7 days buttons will retrieve data for said date and display the info
 - Selecting any date in input box will retrieve data from selected date and display the info
-- Pass data from child A component -> parent compoent -> child B component
+- Pass data from child A component → parent compoent → child B component
 
 
 <hr>
